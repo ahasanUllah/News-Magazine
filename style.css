@@ -8,12 +8,7 @@ body {
 #category {
    background-color: #008d7f;
 }
-#category-container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-bottom: 0;
-}
+
 #category-container li {
    list-style: none;
    /* font-family: 'Encode Sans', sans-serif; */
