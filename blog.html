@@ -103,6 +103,37 @@
                   </p>
                </div>
             </div>
+            <!-- blog2 -->
+            <div>
+               <h1 class="text-center">The Difference Between Regular Functions and Arrow Functions</h1>
+               <div class="inner">
+                  <h2>Arguments binding</h2>
+                  <p>
+                     Arrow functions do not have an arguments binding. However, they have access to the arguments object
+                     of the closest non-arrow parent function. Named and rest parameters are heavily relied upon to
+                     capture the arguments passed to arrow functions.
+                  </p>
+                  <h2>Use of this keyword</h2>
+                  <p>
+                     Unlike regular functions, arrow functions do not have their own this. The value of this inside an
+                     arrow function remains the same throughout the lifecycle of the function and is always bound to the
+                     value of this in the closest non-arrow parent function.
+                  </p>
+                  <h2>Using new keyword</h2>
+                  <p>
+                     Regular functions created using function declarations or expressions are constructible and
+                     callable. Since regular functions are constructible, they can be called using the new keyword.
+                     However, the arrow functions are only callable and not constructible, i.e arrow functions can never
+                     be used as constructor functions. Hence, they can never be invoked with the new keyword.
+                  </p>
+                  <h2>No duplicate named parameters</h2>
+                  <p>
+                     Arrow functions can never have duplicate named parameters, whether in strict or non-strict
+                     mode.With arrow functions, duplicate named arguments are always, regardless of strict or non-strict
+                     mode, invalid.
+                  </p>
+               </div>
+            </div>
          </section>
       </main>
       <!-- BOOTSTRAP JAVASCRIPT -->
