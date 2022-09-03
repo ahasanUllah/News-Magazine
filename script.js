@@ -44,7 +44,7 @@ const displayNews = (news, name) => {
          return b.total_view - a.total_view;
       });
       news.forEach((singleNews) => {
-         //   console.log(singleNews);
+         //  console.log(singleNews._id);
          const div = document.createElement('div');
          div.classList.add('card');
          div.classList.add('mb-4');
@@ -71,7 +71,9 @@ const displayNews = (news, name) => {
                    singleNews.total_view ? singleNews.total_view + 'M' : 'N/A'
                 } </div> 
                 <div class="read-more"> 
-                <button id="read-more-btn"> Read More <i class="fa-solid fa-arrow-right-long"></i> </button>
+                <button class='read-more-btn' onclick='getNewsDetails("${
+                   singleNews._id
+                }")' data-bs-toggle="modal" data-bs-target="#newsModal"> Read More <i class="fa-solid fa-arrow-right-long"></i> </button>
                 </div>
             </div>           
          </div>
@@ -84,6 +86,23 @@ const displayNews = (news, name) => {
    }
 
    toggleLoader(false);
+};
+// GET NEWS DETAILS
+const getNewsDetails = (news_id) => {
+   const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+   fetch(url)
+      .then((res) => res.json())
+      .then((data) => displayNewsDetails(data.data[0]));
+};
+const displayNewsDetails = (details) => {
+   const modalTitle = document.getElementById('newsModalLabel');
+   const modalBodyText = document.getElementById('modal-body-text');
+   const modalAuthorName = document.getElementById('modal-author-name');
+   const modalViewsCount = document.getElementById('modal-views-count');
+   modalTitle.innerText = details.title;
+   modalBodyText.innerText = details.details;
+   modalAuthorName.innerText = `Author: ${details.author.name ? details.author.name : 'N/A'}`;
+   modalViewsCount.innerText = `views: ${details.total_view ? details.total_view + 'M' : 'N/A'}`;
 };
 // LOADER
 function toggleLoader(isloading) {

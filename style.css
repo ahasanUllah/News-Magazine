@@ -51,7 +51,7 @@ body {
    margin: 0;
    color: #718797;
 }
-#read-more-btn {
+.read-more-btn {
    border: none;
    background-color: #008d7f;
    color: white;
