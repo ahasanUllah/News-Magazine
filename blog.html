@@ -52,124 +52,33 @@
             <div class="">
                <h1 class="text-center">Var, Let, and Const – What's the Difference?</h1>
                <div class="inner">
-                  <p>
-                     One of the features that came with ES6 is the addition of let and const, which can be used for
-                     variable declaration. The question is, what makes them different from good ol' var which we've been
-                     using? If you are still not clear about this, then this article is for you.
-                  </p>
-                  <h2>Var</h2>
-                  <p>
-                     Before the advent of ES6, var declarations ruled. There are issues associated with variables
-                     declared with var, though. That is why it was necessary for new ways to declare variables to
-                     emerge. First, let's get to understand var more before we discuss those issues.
-                  </p>
-                  <h2>Scope of var</h2>
-                  <p>
-                     Scope essentially means where these variables are available for use. var declarations are globally
-                     scoped or function/locally scoped. The scope is global when a var variable is declared outside a
-                     function. This means that any variable that is declared with var outside a function block is
-                     available for use in the whole window.
-                  </p>
-                  <h2>Hoisting of var</h2>
-                  <p>
-                     Variables declared with the var keyword are subject to hoisting. If we declare a variable (but do
-                     not initialize it) at the end of the function, the JavaScript runtime will move it to the top of
-                     its scope and, therefore, there will be no complaint by the runtime if we use that variable before
-                     being declared.
-                  </p>
-                  <h2>The let Keyword in JavaScript</h2>
-                  <p>
-                     let is the improved version of var. let eliminates all the issues of var that we have talked about
-                     in the previous section. let has a similar syntax to var but has a more strict scope.
-                  </p>
-                  <h2>let is Block Scoped</h2>
-                  <p>
-                     The let keyword should be used in situations where you want to declare a variable that should be
-                     restricted to the block in which it is restricted. Also, variables declared with the let keyword
-                     cannot be updated or re-declared. Here is an example of how to use let to declare variables in
-                     JavaScript Note that the variable y declared with the let keyword is not accessible beyond the if
-                     block in which it is declared. If we would have declared it with the var keyword, then it would
-                     have been available, because var has global scope within a function. The following code snippet
-                     will help you to better understand this train of thought:
-                  </p>
-                  <h2>The const Keyword in JavaScript</h2>
-                  <p>
-                     The const keyword follows the same rules as the let keyword. The only difference with const is that
-                     const is used to define only constant values in JavaScript programs. The scoping principles of
-                     const are the same as that of the let keyword. Like let, the variables declared with the const
-                     keyword will also have scope restricted to the block in which they are declared. Some important
-                     pointers for const include: const declares a variable with a constant value. Use the const keyword
-                     if the variable that you are declaring should not be allowed to be reassigned in the future.
+                  <p></p>
+                     <span class="fs-2">Let</span> <br>
+                     if let used in a function it cannot be accessed outside of that function. if let is used outside the function that means it can be accessed in the global scope also in the function scope <br>
+                     <span class="fs-2">Var</span> <br>
+                     it can be accessed from anywhere whether its decleared inside the function scope or glogal scope
+                      <br> <span class="fs-2">Const</span> <br> It’s quite similar to Let with the only difference that once the variable has been
+                     defined then its value cannot be changed. Like if the user tries to change the value of the const
+                     variable, then they will get an error.
                   </p>
                </div>
             </div>
             <!-- blog2 -->
             <div>
-               <h1 class="text-center">The Difference Between Regular Functions and Arrow Functions</h1>
+               
                <div class="inner">
-                  <h2>Arguments binding</h2>
-                  <p>
-                     Arrow functions do not have an arguments binding. However, they have access to the arguments object
-                     of the closest non-arrow parent function. Named and rest parameters are heavily relied upon to
-                     capture the arguments passed to arrow functions.
-                  </p>
-                  <h2>Use of this keyword</h2>
-                  <p>
-                     Unlike regular functions, arrow functions do not have their own this. The value of this inside an
-                     arrow function remains the same throughout the lifecycle of the function and is always bound to the
-                     value of this in the closest non-arrow parent function.
-                  </p>
-                  <h2>Using new keyword</h2>
-                  <p>
-                     Regular functions created using function declarations or expressions are constructible and
-                     callable. Since regular functions are constructible, they can be called using the new keyword.
-                     However, the arrow functions are only callable and not constructible, i.e arrow functions can never
-                     be used as constructor functions. Hence, they can never be invoked with the new keyword.
-                  </p>
-                  <h2>No duplicate named parameters</h2>
-                  <p>
-                     Arrow functions can never have duplicate named parameters, whether in strict or non-strict
-                     mode.With arrow functions, duplicate named arguments are always, regardless of strict or non-strict
-                     mode, invalid.
-                  </p>
+                  <h1 class="text-center">The Difference Between Regular Functions and Arrow Functions</h1>
+                 <p>
+                  Arrow function is sorter and simpler then regular function. arrow function can be written in single line. also arrow function do not bind this keyword. that means unlike regular function this keyword has no effect in arrow function this inside arrow function reffer to the glogal objects.
+                 </p>
                </div>
             </div>
             <!-- blog 3 -->
             <div>
                <h1 class="text-center">Why You Use Templete String</h1>
                <div class="inner">
-                  <h2></h2>
                   <p>
-                     Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
-                     insert/interpolate variables and expressions into strings without needing to concatenate like in
-                     older versions of JavaScript. It allows us to create strings that are complex and contain dynamic
-                     elements. Another great thing that comes with template strings are tags. Tags are functions that
-                     take a string and the decomposed parts of the string as parameters and are great for converting
-                     strings to different entities.
-                  </p>
-                  <h2>Multiline Strings</h2>
-                  <p>
-                     One great feature of template strings is that we can have strings with multiple lines for better
-                     code readability. This cannot be done in an easy way with the old style of strings. With the old
-                     style of strings, we had to concatenate each line of the string to put long strings in multiple
-                     lines This is much better than concatenating strings together. It takes a lot less time to write
-                     the code and a lower probability of syntax errors. It’s also much more readable. Note that this
-                     method does add an actual new like to the string \n and if you don’t want the string to have
-                     multiple lines in its final format, just put a \ at the end of the line.
-                  </p>
-                  <h2>Nesting Templates</h2>
-                  <p>
-                     Template strings can be nested in each other. This is a great feature because many people want to
-                     create dynamic strings. Template strings allow us to nest regular strings or template strings
-                     within template strings.
-                  </p>
-                  <h2>Tagged Templates</h2>
-                  <p>
-                     With template strings, we can add something called tags in front of a template string. They are
-                     functions that take a string and the decomposed parts of the string as parameters. A tagged
-                     function decomposes the template string into an array as the first parameter, with each item of the
-                     array as the constant parts of the string. The additional parameters of the function are all the
-                     variables and expressions in the order in which they appear in the string.
+                     The first reason the use String Templete is to is so easiar to concate a string and a variable. we do not have to use '+' sign to concate a string and a variable. Another great benefit of using templete string is it allows to use multiline code it comes handy when we need to add multiple html tag in DOM.
                   </p>
                </div>
             </div>
