@@ -24,6 +24,9 @@ body {
    color: white;
    text-decoration: none;
 }
+#category-container li a:hover {
+   color: #fcfcfcab;
+}
 .card-body h5 {
    font-family: 'Encode Sans', sans-serif;
    font-size: 22;
