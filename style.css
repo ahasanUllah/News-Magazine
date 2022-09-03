@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=Oxygen&display=swap');
+body {
+   font-family: 'Oxygen', sans-serif;
+}
+.navbar-brand img {
+   width: 200px;
+}
+#category {
+   background-color: #008d7f;
+}
+#category-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 0;
+}
+#category-container li {
+   list-style: none;
+   /* font-family: 'Encode Sans', sans-serif; */
+   font-family: 'Oxygen', sans-serif;
+   font-size: 17px;
+
+   font-weight: 600;
+}
+#category-container li a {
+   color: white;
+   text-decoration: none;
+}
+.card-body h5 {
+   font-family: 'Encode Sans', sans-serif;
+   font-size: 22;
+   font-weight: 700;
+   color: #191a1e;
+}
+.card-text {
+   color: #3e3e3e;
+   font-size: 14px;
+   font-weight: 400;
+}
+.info-container img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+}
+.author-info {
+   line-height: 5px;
+   padding-left: 10px;
+}
+.date {
+   font-size: 14px;
+   margin: 0;
+   color: #718797;
+}
