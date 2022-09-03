@@ -67,3 +67,11 @@ body {
    font-weight: 400;
    margin: 0;
 }
+.inner {
+   margin: 40px 300px;
+}
+@media screen and (max-width: 800px) {
+   .inner {
+      margin: 40px 20px;
+   }
+}
