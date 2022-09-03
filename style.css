@@ -5,6 +5,9 @@ body {
 .navbar-brand img {
    width: 200px;
 }
+.navbar-nav .nav-link.active {
+   color: #008d7f;
+}
 #category {
    background-color: #008d7f;
 }
@@ -50,6 +53,10 @@ body {
    border: none;
    background-color: #008d7f;
    color: white;
+}
+.read-more-btn:hover {
+   background-color: #008d7f4f;
+   color: #3e3e3e;
 }
 .catagory-item-count {
    background-color: #008d7f1f;
