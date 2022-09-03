@@ -9,30 +9,38 @@ const displayCatagory = (categories) => {
    categories.forEach((catagorie) => {
       const li = document.createElement('li');
       li.innerHTML = `
-      <a href="javascript:void(0)" onclick='getNews(${catagorie.category_id})'>${catagorie.category_name}</a>
+      <a href="javascript:void(0)" onclick='getNews(${catagorie.category_id}, "${catagorie.category_name}")'>${catagorie.category_name}</a>
       `;
       categorieContainer.appendChild(li);
    });
 };
 getCatagory();
 
-const getNews = async function (id) {
-   console.log(id);
+const getNews = async function (id, name) {
+   toggleLoader(true);
    const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
    const res = await fetch(url);
    const data = await res.json();
-   displayNews(data.data);
+   displayNews(data.data, name);
 };
-const displayNews = (news) => {
-   console.log(news);
+const displayNews = (news, name) => {
+   console.log(name);
    const singleNewsContainer = document.getElementById('singleNews-container');
    singleNewsContainer.innerHTML = '';
-   news.forEach((singleNews) => {
-      console.log(singleNews);
-      const div = document.createElement('div');
-      div.classList.add('card');
-      div.classList.add('mb-4');
-      div.innerHTML = `
+   const categoryCountText = document.getElementById('category-count-massege');
+   if (news.length === 0) {
+      categoryCountText.innerText = 'No items found';
+   } else {
+      categoryCountText.innerText = `${news.length} items found for catagorie ${name}`;
+      news.sort((a, b) => {
+         return b.total_view - a.total_view;
+      });
+      news.forEach((singleNews) => {
+         //   console.log(singleNews);
+         const div = document.createElement('div');
+         div.classList.add('card');
+         div.classList.add('mb-4');
+         div.innerHTML = `
       <div class="row g-0">
       <div class="col-md-4 p-3">
          <img src="${singleNews.image_url}" class="img-fluid rounded-start h-100" alt="..." />
@@ -51,17 +59,31 @@ const displayNews = (news) => {
                 }</p>
                 </div>
             </div>
-                <div class='view-count'> <i class="fa-regular fa-eye"></i> ${
+                <div class='view-count fw-bold'> <i class="fa-regular fa-eye"></i> ${
                    singleNews.total_view ? singleNews.total_view + 'M' : 'N/A'
                 } </div> 
-                <div class="read-more"> Hello </div>
+                <div class="read-more"> 
+                <button id="read-more-btn"> Read More <i class="fa-solid fa-arrow-right-long"></i> </button>
+                </div>
             </div>           
          </div>
          
       </div>
    </div>
       `;
-      singleNewsContainer.appendChild(div);
-   });
+         singleNewsContainer.appendChild(div);
+      });
+   }
+
+   toggleLoader(false);
 };
-getNews(8);
+// LOADER
+function toggleLoader(isloading) {
+   const loadingSpinner = document.getElementById('loader');
+   if (isloading) {
+      loadingSpinner.classList.remove('d-none');
+   } else {
+      loadingSpinner.classList.add('d-none');
+   }
+}
+getNews(8, 'All news');
