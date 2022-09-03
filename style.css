@@ -57,8 +57,11 @@ body {
    color: white;
 }
 .catagory-item-count {
-   background-color: #008d7f33;
-   font-size: 16px;
+   background-color: #008d7f1f;
    padding: 10px 10px;
+}
+#category-count-massege {
+   font-size: 16px;
+   font-weight: 400;
    margin: 0;
 }
